@@ -2,18 +2,21 @@ name: First Actions
 on: push
 
 jobs:
-    first-workflow:
-        name: first-workflow
+    first-workflow-under-workflow:
+        name: first-workflow-job
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code repository
               uses: actions/checkout@v4
             
-            - name: echo statement
-              run: echo "Hello world"
+            - name: LIST and READ FILES using multi line commands
+              run: |
+                   echo "Hello reader"
+                   ls -ltra
+                   cat README.md
             
-            - name: list files
-              run: ls
+            # - name: list files
+            #   run: ls
 
-            - name: READ readme.md
-              run: cat README.md
+            # - name: READ readme.md
+            #   run: cat README.md
